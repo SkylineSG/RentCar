@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Bmw x5 WL458952",
+        "description": "Suv with large boot capacity,Color:White",
+        "price": 250
+    },
+    {
+        "id": 2,
+        "name": "Mercedes c300  WL25874",
+        "description": "Cabriolet with small boot capacity,Color:Blue",
+        "price": 150
+    },
+    {
+        "id": 3,
+        "name": "Dacia Duster WL89652",
+        "description": "Suv with large boot capacity,Color:Black",
+        "price": 80
+    }
+]
