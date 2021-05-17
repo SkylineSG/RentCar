@@ -1,5 +1,10 @@
 package com.db;
 
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -9,10 +14,13 @@ public class DbManager {
     private Connection conn;
     private static DbManager dbManagerInstance;
 
+    @Value("${DbPassword}")
+    private String dbPassword;
+
     private DbManager() throws SQLException {
         Properties connectionProps = new Properties();
         connectionProps.put("user", "carRent_user");
-        connectionProps.put("password", "Pusia13x");
+        connectionProps.put(dbPassword);
         conn = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/rentCars?serverTimezone=Europe/Warsaw" +
                         "&useSSL=False",

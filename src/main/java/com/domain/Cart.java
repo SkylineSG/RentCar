@@ -31,7 +31,7 @@ public class Cart {
             targetEntity = Car.class,
             cascade = CascadeType.ALL)
     @JoinTable(
-            name = "products_In_Cart",
+            name = "cars_In_Cart",
             joinColumns = @JoinColumn(name = "Cart_id")
     )
     private List<Car> cars;

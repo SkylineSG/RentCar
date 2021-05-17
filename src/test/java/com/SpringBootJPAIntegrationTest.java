@@ -8,18 +8,21 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.Optional;
 
 @SpringBootTest(classes = RentalApplication.class)
-public class SpringBootJPAIntegrationTest {
+class SpringBootJPAIntegrationTest {
 
     @Autowired
     private GenericEntityRepository genericEntityRepository;
 
     @Test
-    public void givenGenericEntityRepository_whenSaveAndRetreiveEntity_thenOK() {
+    void genericEntityIntegrationTest() {
+        //Give generic entity repository
+        // when new saved entity
         GenericEntity genericEntity = genericEntityRepository
                 .save(new GenericEntity("test"));
+        // and search saved entity:
         Optional<GenericEntity> foundEntity = genericEntityRepository
                 .findById(genericEntity.getId());
-
+        //Then
         Assertions.assertTrue(foundEntity.isPresent());
         Assertions.assertEquals(genericEntity.getValue(), foundEntity.get().getValue());
     }
