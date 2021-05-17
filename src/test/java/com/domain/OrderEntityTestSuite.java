@@ -13,14 +13,14 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(classes = RentalApplication.class)
-public class OrderEntityTestSuite {
+ class OrderEntityTestSuite {
     @Autowired
     private OrderRepository orderRepository;
     @Autowired
     private UserRepository userRepository;
 
     @Test
-    public void testOrderConnections() {
+    private void testOrderConnections() {
         //Given
         User user1 = new User(1L, "User1", true, 1234L);
         User user2 = new User(2L, "User2", false, 2345L);
@@ -54,7 +54,7 @@ public class OrderEntityTestSuite {
     }
 
     @Test
-    public void testSaveOrder() {
+    private void testSaveOrder() {
         //Given
         Order order = new Order();
         order.setShipmentAddress("Somewhere in the world");
@@ -72,7 +72,7 @@ public class OrderEntityTestSuite {
     }
 
     @Test
-    public void testFindOrderById() {
+    private void testFindOrderById() {
         //Given
         Order order1 = new Order();
         Order order2 = new Order();
@@ -99,7 +99,7 @@ public class OrderEntityTestSuite {
         }
 
     @Test
-    public void testOrderFindAll() {
+    private void testOrderFindAll() {
         //Given
         Order order1 = new Order();
         Order order2 = new Order();

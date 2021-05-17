@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootTest(classes = RentalApplication.class)
-public class CartEntityTestSuite {
+ class CartEntityTestSuite {
 
     @Autowired
     private CartRepository cartRepository;
@@ -20,7 +20,7 @@ public class CartEntityTestSuite {
     private CarRepository carRepository;
 
     @Test
-    public void testCartEntityConnections() {
+    private void testCartEntityConnections() {
 
         //Given
         Car car1 = new Car(1L,
@@ -64,7 +64,7 @@ public class CartEntityTestSuite {
     }
 
     @Test
-    public void testFindById() {
+    private void testFindById() {
 
         //Given
         User user = new User("Wojtek");
@@ -83,7 +83,7 @@ public class CartEntityTestSuite {
     }
 
     @Test
-    public void testDeleteById() {
+    private void testDeleteById() {
 
         //Given
         User user = new User("Wojtek");

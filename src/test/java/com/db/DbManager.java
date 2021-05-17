@@ -27,14 +27,14 @@ public class DbManager {
                 connectionProps);
     }
 
-    public static DbManager getInstance() throws SQLException {
+    private static DbManager getInstance() throws SQLException {
         if (dbManagerInstance == null) {
             dbManagerInstance = new DbManager();
         }
         return dbManagerInstance;
     }
 
-    public Connection getConnection() {
+    private Connection getConnection() {
         return conn;
     }
 }

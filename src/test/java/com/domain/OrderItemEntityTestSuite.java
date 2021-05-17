@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @SpringBootTest(classes = RentalApplication.class)
-public class OrderItemEntityTestSuite {
+ class OrderItemEntityTestSuite {
     @Autowired
     private  OrderRepository orderRepository;
     @Autowired
@@ -25,7 +25,7 @@ public class OrderItemEntityTestSuite {
     private OrderItemRepository orderItemRepository;
 
     @Test
-    public void testAddItemToTheOrder() {
+    private void testAddItemToTheOrder() {
         Car car1 = new Car(1234L, "Bmw", "Normal Car", 2000.0);
         Car car2 = new Car(234456L, "Mercedes", "Premium Car", 5000.0);
         carRepository.save(car1);
@@ -49,7 +49,7 @@ public class OrderItemEntityTestSuite {
     }
 
     @Test
-    public void testSaveOrderItem() {
+    private void testSaveOrderItem() {
         //Given
         OrderItem orderItem = new OrderItem();
 
@@ -66,7 +66,7 @@ public class OrderItemEntityTestSuite {
     }
 
     @Test
-    public void testFindAllOrderItem() {
+    private void testFindAllOrderItem() {
         //Given
         OrderItem orderItem1 = new OrderItem();
         OrderItem orderItem2 = new OrderItem();
@@ -90,7 +90,7 @@ public class OrderItemEntityTestSuite {
     }
 
     @Test
-    public void testFindOrderItemById() {
+    private void testFindOrderItemById() {
         //Given
         OrderItem orderItem = new OrderItem();
 

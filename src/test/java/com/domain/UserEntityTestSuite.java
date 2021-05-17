@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+
 import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.util.ArrayList;
@@ -50,7 +52,7 @@ class UserEntityTestSuite {
     }
 
     @Test
-    void testUserEntityAndCartRelation() {
+   private void testUserEntityAndCartRelation() {
 // given list of cars
         List<Car> carList = createTestCarList();
 // and user
@@ -75,7 +77,7 @@ class UserEntityTestSuite {
 
 
     @Test
-    void testUserEntityConnections() {
+    private void testUserEntityConnections() {
         //Given
 
         Car car1 = new Car(1L,
@@ -117,7 +119,7 @@ class UserEntityTestSuite {
     }
 
     @Test
-    public void testFindById() {
+    private void testFindById() {
 
         //Given
         User user = new User("Wojtek");
@@ -143,7 +145,7 @@ class UserEntityTestSuite {
     }
 
     @Test
-    public void testDeleteById() {
+    private void testDeleteById() {
 
         //Given
         User user = new User("Wojtek");
