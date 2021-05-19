@@ -28,8 +28,8 @@ public class CarController {
     }
 
     @PostMapping(value = "createCar")
-    public void createCar(@RequestBody CarDto productDto) throws CarConflictException {
-        carDbService.saveCar(carMapper.mapToCar(productDto));
+    public void createCar(@RequestBody CarDto carDto) throws CarConflictException {
+        carDbService.saveCar(carMapper.mapToCar(carDto));
 
     }
 
