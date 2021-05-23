@@ -25,7 +25,7 @@ import java.util.Optional;
     private OrderItemRepository orderItemRepository;
 
     @Test
-    private void testAddItemToTheOrder() {
+     void testAddItemToTheOrder() {
         Car car1 = new Car(1234L, "Bmw", "Normal Car", 2000.0);
         Car car2 = new Car(234456L, "Mercedes", "Premium Car", 5000.0);
         carRepository.save(car1);
@@ -49,7 +49,7 @@ import java.util.Optional;
     }
 
     @Test
-    private void testSaveOrderItem() {
+     void testSaveOrderItem() {
         //Given
         OrderItem orderItem = new OrderItem();
 
@@ -66,7 +66,7 @@ import java.util.Optional;
     }
 
     @Test
-    private void testFindAllOrderItem() {
+     void testFindAllOrderItem() {
         //Given
         OrderItem orderItem1 = new OrderItem();
         OrderItem orderItem2 = new OrderItem();
@@ -90,7 +90,7 @@ import java.util.Optional;
     }
 
     @Test
-    private void testFindOrderItemById() {
+     void testFindOrderItemById() {
         //Given
         OrderItem orderItem = new OrderItem();
 

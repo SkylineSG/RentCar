@@ -8,13 +8,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.Optional;
 
 @SpringBootTest(classes = RentalApplication.class)
-  class SpringBootJPAIntegrationTest {
+class SpringBootJPAIntegrationTest {
 
     @Autowired
     private GenericEntityRepository genericEntityRepository;
 
     @Test
-    private void genericEntityIntegrationTest() {
+     void genericEntityIntegrationTest() {
         //Give generic entity repository
         // when new saved entity
         GenericEntity genericEntity = genericEntityRepository

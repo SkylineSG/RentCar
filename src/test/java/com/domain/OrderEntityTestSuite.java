@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.*;
     private UserRepository userRepository;
 
     @Test
-    private void testOrderConnections() {
+     void testOrderConnections() {
         //Given
         User user1 = new User(1L, "User1", true, 1234L);
         User user2 = new User(2L, "User2", false, 2345L);
@@ -54,7 +54,7 @@ import static org.junit.jupiter.api.Assertions.*;
     }
 
     @Test
-    private void testSaveOrder() {
+     void testSaveOrder() {
         //Given
         Order order = new Order();
         order.setShipmentAddress("Somewhere in the world");
@@ -72,7 +72,7 @@ import static org.junit.jupiter.api.Assertions.*;
     }
 
     @Test
-    private void testFindOrderById() {
+     void testFindOrderById() {
         //Given
         Order order1 = new Order();
         Order order2 = new Order();
@@ -99,7 +99,7 @@ import static org.junit.jupiter.api.Assertions.*;
         }
 
     @Test
-    private void testOrderFindAll() {
+     void testOrderFindAll() {
         //Given
         Order order1 = new Order();
         Order order2 = new Order();

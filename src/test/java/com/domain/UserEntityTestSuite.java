@@ -49,7 +49,7 @@ class UserEntityTestSuite {
 //        );
 //    }
 //    @Test
-//   private void testUserEntityAndCartRelation() {
+//    void testUserEntityAndCartRelation() {
 //// given list of cars
 //        List<Car> carList = createTestCarList();
 //// and user
@@ -68,7 +68,7 @@ class UserEntityTestSuite {
 //    }
 
     @Test
-    private void testUserEntityConnections() {
+     void testUserEntityConnections() {
         //Given
 
         Car car1 = new Car(1L,
@@ -110,7 +110,7 @@ class UserEntityTestSuite {
     }
 
     @Test
-    private void testFindById() {
+     void testFindById() {
 
         //Given
         User user = new User("Wojtek");
@@ -136,7 +136,7 @@ class UserEntityTestSuite {
     }
 
     @Test
-    private void testDeleteById() {
+     void testDeleteById() {
 
         //Given
         User user = new User("Wojtek");

@@ -18,18 +18,15 @@ dependencies {
     implementation 'org.junit.jupiter:junit-jupiter:5.4.2'
     implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.23'
     runtimeOnly ('mysql:mysql-connector-java')
-    runtimeOnly('com.h2database:h2')
+   // runtimeOnly('com.h2database:h2')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
-    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.6.1'
-
     implementation 'org.springframework.boot:spring-boot-starter-mail'
 
     compileOnly 'org.projectlombok:lombok:1.18.18'
     annotationProcessor('org.projectlombok:lombok:1.18.18')
     testCompileOnly('org.projectlombok:lombok:1.18.18')
     testAnnotationProcessor('org.projectlombok:lombok:1.18.18')
-    compile('io.springfox:springfox-swagger2:2.9.2')
-    compile('io.springfox:springfox-swagger-ui:2.9.2')
+    implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
 
 }
 

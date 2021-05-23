@@ -3,6 +3,7 @@ package com.domain;
 import com.RentalApplication;
 import com.repository.CarRepository;
 import com.repository.CartRepository;
+import com.repository.UserRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,12 +16,14 @@ import java.util.List;
  class CartEntityTestSuite {
 
     @Autowired
+    private UserRepository userRepository;
+    @Autowired
     private CartRepository cartRepository;
     @Autowired
     private CarRepository carRepository;
 
     @Test
-    private void testCartEntityConnections() {
+     void testCartEntityConnections() {
 
         //Given
         Car car1 = new Car(1L,
@@ -41,14 +44,18 @@ import java.util.List;
         carList.add(car1);
         carList.add(car2);
 
-        User user = new User("Wojtek");
-        user.setUserKey(12345L);
-        user.setAddress("Somewhere in the world");
-        user.setEmail("SomeMail@mail");
-        user.setPhoneNumber("118913");
+        User wojtek = new User("Wojtek");
+       wojtek.setUserKey(12345L);
+       wojtek.setAddress("Somewhere in the world");
+       wojtek.setEmail("SomeMail@mail");
+       wojtek.setPhoneNumber("118913");
+       userRepository.save(wojtek); //////
 
-        Cart cart = new Cart(1L, user, carList);
+        Cart cart = new Cart(1L, wojtek, carList);
         cartRepository.save(cart);
+
+        //When
+       long id = userRepository.findAll().get(0).getId(); ///
 
         //Then
         Cart resultCart = cartRepository.findAll().get(0);
@@ -64,7 +71,7 @@ import java.util.List;
     }
 
     @Test
-    private void testFindById() {
+     void testFindById() {
 
         //Given
         User user = new User("Wojtek");
@@ -83,7 +90,7 @@ import java.util.List;
     }
 
     @Test
-    private void testDeleteById() {
+     void testDeleteById() {
 
         //Given
         User user = new User("Wojtek");
