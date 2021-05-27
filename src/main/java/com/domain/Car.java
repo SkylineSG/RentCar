@@ -46,6 +46,10 @@ public class Car {
     @OneToMany(mappedBy = "car")
     private List<OrderItem>items;
 
+    public Car(@Nullable String carName) {
+        this.carName = carName;
+    }
+
     public Car(@Nullable Long id, @Nullable String carName, String carDescription, @Nullable Double price) {
         this.id = id;
         this.carName = carName;
