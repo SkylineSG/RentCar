@@ -5,6 +5,7 @@ import com.domain.*;
 import com.controller.exceptions.CartNotFoundException;
 import com.controller.exceptions.UserNotFoundException;
 import com.domain.dto.CarDto;
+import com.domain.dto.CartDto;
 import com.mapper.CarMapper;
 import com.mapper.CartMapper;
 import com.mapper.OrderMapper;
@@ -21,7 +22,7 @@ import static java.util.stream.Collectors.toList;
 @RestController
 @RequestMapping("/v1/cart")
 public class CartController {
-    private CartMapper cartMapper;
+    private  CartMapper cartMapper;
     private CartDbService cartDbService;
     private CarDbService carDbService;
     private CarMapper carMapper;

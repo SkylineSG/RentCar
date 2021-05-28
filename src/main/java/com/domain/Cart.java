@@ -32,7 +32,7 @@ public class Cart {
             cascade = CascadeType.ALL)
     @JoinTable(
             name = "cars_In_Cart",
-            joinColumns = @JoinColumn(name = "Cart_id")
+            joinColumns = @JoinColumn(name = "Car_id")
     )
     private List<Car> cars;
 }

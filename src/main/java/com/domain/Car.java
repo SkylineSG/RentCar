@@ -15,7 +15,7 @@ import java.util.List;
 public class Car {
     @Id
     @GeneratedValue
-    @Column(nullable = false, name = "id")
+    @Column(nullable = false, name = "Car_id")
     private Long id;
 
     @Column(nullable = false, name = "name")

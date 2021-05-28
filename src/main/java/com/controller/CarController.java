@@ -4,7 +4,10 @@ import com.controller.exceptions.CarConflictException;
 import com.controller.exceptions.CarNotFoundException;
 import com.domain.dto.CarDto;
 import com.mapper.CarMapper;
+import com.mapper.UserMapper;
 import com.service.CarDbService;
+import com.service.UserDbService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,9 +16,14 @@ import java.util.List;
 @RequestMapping("/v1/car")
 public class CarController {
 
-   private CarDbService carDbService;
+   private final CarDbService carDbService;
+   private final CarMapper carMapper;
 
-   private CarMapper carMapper;
+    @Autowired
+    public CarController(CarMapper carMapper, CarDbService carDbService) {
+        this.carMapper = carMapper;
+        this.carDbService = carDbService;
+    }
 
     @GetMapping(value = "getCars")
     public List<CarDto> getCars() {

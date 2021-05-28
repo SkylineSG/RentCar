@@ -16,8 +16,8 @@ import java.util.Random;
 @RequestMapping("/v1/user")
 public class UserController {
     
-    private  UserMapper mapper;
-    private  UserDbService service;
+    private final UserMapper mapper;
+    private final UserDbService service;
 
     @Autowired
     public UserController(UserMapper mapper, UserDbService service) {

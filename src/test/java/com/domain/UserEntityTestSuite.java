@@ -6,7 +6,6 @@ import com.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -53,7 +52,7 @@ class UserEntityTestSuite {
 //// given list of cars
 //        List<Car> carList = createTestCarList();
 //// and user
-//        User user = createTestUser();
+//        User user = createUser();
 //// and cart with user and cars
 //        Cart cart = createCart(carList, user);
 //       // user.setCarts(List.of(cart));
@@ -114,10 +113,8 @@ class UserEntityTestSuite {
         cartList.add(cart);
 
         createUser().setCarts(cartList);
-
         //When
         long id = userRepository.findAll().get(0).getId();
-
         //Then
         assertTrue(userRepository.findById(id).isPresent());
     }
