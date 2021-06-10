@@ -56,7 +56,7 @@ public class CarEntityTestSuite {
         car.setCarDescription("Suv");
         car.setPrice(250.0);
         this.carRepository.save(car);
-
+        carRepository.flush();
         Cart cart = new Cart(1L,createUser(), new ArrayList<>());
         cartRepository.save(cart);
 
@@ -67,7 +67,7 @@ public class CarEntityTestSuite {
 
         //When
         long id = carRepository.findAll().get(0).getId();
-        Car resultCar = carRepository.findAll().get(2);
+        Car resultCar = carRepository.findAll().get(1);
 
         //Then
         assertTrue(carRepository.findById(id).isPresent());
@@ -80,7 +80,8 @@ public class CarEntityTestSuite {
         Car car = new Car(CAR_NAME);
         car.setCarDescription("Suv");
         car.setPrice(250.0);
-        carRepository.save(car);
+        this.carRepository.save(car);
+        carRepository.flush();
 
         Cart cart = new Cart(1L,createUser(), new ArrayList<>());
         cartRepository.save(cart);

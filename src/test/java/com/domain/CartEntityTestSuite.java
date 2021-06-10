@@ -33,6 +33,7 @@ import static org.junit.jupiter.api.Assertions.*;
         user.setEmail("SomeMail@mail");
         user.setPhoneNumber("118913");
         this.userRepository.save(user);
+        userRepository.flush();
         return user;
     }
     @Test
