@@ -52,6 +52,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
         carRepository.save(car1);
         carRepository.save(car2);
+        carRepository.flush();
 
         //When
         List<Car> carList = new ArrayList<>();
@@ -60,6 +61,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
         Cart cart = new Cart(1L, createUser(), carList);
         cartRepository.save(cart);
+        cartRepository.flush();
 
         //When
        long id = userRepository.findAll().get(0).getId(); ///
@@ -81,6 +83,7 @@ import static org.junit.jupiter.api.Assertions.*;
      void testFindById() {
         Cart cart = new Cart(1L,createUser(), new ArrayList<>());
         cartRepository.save(cart);
+        cartRepository.flush();
 
         List<Cart> cartList = new ArrayList<>();
         cartList.add(cart);

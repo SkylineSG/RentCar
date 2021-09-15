@@ -34,6 +34,7 @@ public class CarEntityTestSuite {
         car.setCarDescription("Suv");
         car.setPrice(250.0);
         this.carRepository.save(car);
+        carRepository.flush();
         return car;
     }
 
@@ -43,7 +44,8 @@ public class CarEntityTestSuite {
         user.setAddress("Somewhere in the world");
         user.setEmail("SomeMail@mail");
         user.setPhoneNumber("118913");
-        userRepository.save(user);
+        this.userRepository.save(user);
+        userRepository.flush();
         return user;
     }
 
@@ -58,7 +60,8 @@ public class CarEntityTestSuite {
         this.carRepository.save(car);
         carRepository.flush();
         Cart cart = new Cart(1L,createUser(), new ArrayList<>());
-        cartRepository.save(cart);
+        this.cartRepository.save(cart);
+        cartRepository.flush();
 
         List<Cart> cartList = new ArrayList<>();
         cartList.add(cart);
@@ -84,8 +87,8 @@ public class CarEntityTestSuite {
         carRepository.flush();
 
         Cart cart = new Cart(1L,createUser(), new ArrayList<>());
-        cartRepository.save(cart);
-
+        this.cartRepository.save(cart);
+        cartRepository.flush();
         List<Cart> cartList = new ArrayList<>();
         cartList.add(cart);
 

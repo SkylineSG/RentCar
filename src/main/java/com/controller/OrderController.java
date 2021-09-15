@@ -44,6 +44,6 @@ public class OrderController {
     @PostMapping(value = "createOrder", consumes = MediaType.APPLICATION_JSON_VALUE)
     public void createOrder(@RequestBody OrderDto orderDto) {
         service.saveOrder(mapper.mapToOrder(orderDto));
-        //emailSender.notifyOrderCreated(mapper.mapToOrder(orderDto));
+        emailSender.notifyOrderCreated(mapper.mapToOrder(orderDto));
     }
 }
